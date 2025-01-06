@@ -47,8 +47,11 @@ def mouse_click(event):
         recording = False
         canvas.delete("ball2")
         #visualize_path(mouse_path)  # 可视化鼠标轨迹
-        save_to_csv(mouse_path)
-        n = n+1
+        try:
+            save_to_csv(mouse_path)
+            n = n+1
+        except Exception:
+            pass
         
         label_n.config(text=f"n: {n}")
         mouse_path = []
