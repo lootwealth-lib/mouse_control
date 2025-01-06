@@ -49,8 +49,7 @@ def mouse_click(event):
         #visualize_path(mouse_path)  # 可视化鼠标轨迹
         save_to_csv(mouse_path)
         n = n+1
-        if n == 100:
-            root.destroy()
+        
         label_n.config(text=f"n: {n}")
         mouse_path = []
 
@@ -60,6 +59,8 @@ def mouse_click(event):
         # 绘制新的第二个小球
         canvas.create_oval(ball2_pos[0]-ball_radius, ball2_pos[1]-ball_radius, ball2_pos[0]+ball_radius, ball2_pos[1]+ball_radius, fill="blue", tags="ball2")
 
+        if n == 100:
+            root.destroy()
 
 # 键盘事件处理函数
 def key(event):
